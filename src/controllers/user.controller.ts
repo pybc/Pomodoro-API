@@ -13,19 +13,18 @@ import { UserService } from '../services/user.service';
 @Controller('user')
 export class UserController {
   constructor(private memberService: UserService) {}
-  @Get('/user')
+  @Get('/')
   async getAllUser(): Promise<Array<any>> {
     return this.memberService.getAllUser();
   }
 
-  @Get('/user/:userId')
-  async findOne(@Param('userId') id: string): Promise<any> {
+  @Get('/:userId')
+  async getUserByUid(@Param('userId') id: string): Promise<any> {
     return this.memberService.getUserByUid(id);
   }
 
-  @Post('/user')
+  @Post('/')
   async createUser(@Body() userData: User): Promise<User> {
     return this.memberService.createUser(userData);
   }
-
 }
