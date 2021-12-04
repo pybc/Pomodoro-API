@@ -17,9 +17,9 @@ export class TrackerService {
     }
   }
 
-  async getTaskByUserId(userId: String): Promise<Tracker[]> {
+  async getTaskByUserId(userId: String): Promise<Tracker> {
     try {
-      return await this.trackerModel.find(userId);
+      return await this.trackerModel.findOne(userId);
     } catch (error) {
       console.log('[Error] UserService-getAllUser error ->', error.message);
     }

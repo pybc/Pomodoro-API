@@ -19,7 +19,7 @@ export class TrackerController {
   }
 
   @Get('/:userId')
-  async getTaskByUserId(@Param('userId') id: String): Promise<any> {
+  async getTaskByUserId(@Param('userId') id: String): Promise<Tracker> {
     return this.trackerService.getTaskByUserId(id);
   }
 
