@@ -3,7 +3,7 @@ import { TrackerController } from '../controllers/tracker.controller';
 import { TrackerService } from '../services/tracker.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { TrackerSchema } from '../models/tracker';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import configuration from 'src/config/configuration';
 interface config {
   username: string;
